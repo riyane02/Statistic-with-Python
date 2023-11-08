@@ -1,0 +1,12 @@
+import pandas as pd
+
+data = {'Taille en cm': ['[151- 155[', '[155- 159[', '[159-163[', '[163-167[', '[167-171['],
+        'Effectif': [10, 12, 11, 7, 10]}
+
+df = pd.DataFrame(data)
+
+df['Effectif cumulé'] = df['Effectif'].cumsum()
+df['Frequence'] = df['Effectif'] / df['Effectif'].sum()
+df['Frequence cumulée'] = df['Frequence'].cumsum()
+
+print(df)
