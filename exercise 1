@@ -1,0 +1,10 @@
+import pandas as pd 
+data = {'Etat Mécanique': ['Mauvais','Moyen','Bon','Excellent'],
+        'Effectif': [7,17,32,14]}
+df = pd.DataFrame(data)
+df['Effectif cumulé'] = df['Effectif'].cumsum() 
+df['Frequence'] = df['Effectif']/df['Effectif'].sum()
+df['Frequence cumulée'] = df['Frequence'].cumsum()
+df['Poucentage'] = df['Frequence']*100
+df['Poucentage cumulé'] = df['Frequence cumulée']*100
+print(df)
