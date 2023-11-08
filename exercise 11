@@ -1,0 +1,22 @@
+import pandas as pd
+import matplotlib.pyplot as plt 
+
+data = {'Taille en cm': ['[151- 155[', '[155- 159[', 
+                        '[159-167[', '[167-171['],
+        'Effectif': [10, 12, 18,10], 
+       'Amplitudes' : [4,4,8,4]
+       }
+df = pd.DataFrame(data)
+
+c = 4
+df['Densité d\Effiectif'] =df['Effectif']/df['Amplitudes'] 
+df ['frequence'] = df['Effectif']/df['Effectif'].sum()
+df['Densité des fréquences'] = df['frequence']/df['Amplitudes']
+df['effectif corrigé'] = (c * (df['Effectif']/df['Amplitudes']))
+df['fc'] = (c * (df['frequence']/df['Amplitudes']))
+plt.bar(df['Taille en cm'], df['effectif corrigé'], color = 'blue', width = 1, alpha = 0.3)
+plt.plot(df['effectif corrigé'], color = 'red', marker = 'o' )
+plt.xlabel('Taille en cm')
+plt.ylabel('effectif corrigé')
+print(df)
+plt.show()
