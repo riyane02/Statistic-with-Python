@@ -1,0 +1,16 @@
+import pandas as pd 
+import matplotlib.pyplot as plt
+data = {'Nombre d/enfant': [0,1,2,3,4,5,6,7,8],
+        'Effectif': [4,10,12,8,5,4,4,2,1]
+        }
+df = pd.DataFrame(data)
+df['Frequence %'] = df['Effectif']/df['Effectif'].sum() *100
+
+width = 0.2
+plt.bar(x=df['Nombre d/enfant'], height=df['Effectif'], width=width)
+plt.bar(x=df['Nombre d/enfant']+width, height=df['Frequence %'], width=width)
+plt.xlabel('Nombre d/enfant')
+plt.ylabel('Effectif et Fréquence %')
+plt.legend()
+plt.title('Diagramme en bâtons pour les fréquences et les effectifs')
+plt.show()
