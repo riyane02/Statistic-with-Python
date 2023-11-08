@@ -1,0 +1,16 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+
+data = {'Taille en cm': ['[151- 155[', '[155- 159[', '[159-163[', '[163-167[', '[167-171['],
+        'Effectif': [10, 12, 11, 7, 10]}
+
+df = pd.DataFrame(data)
+
+plt.bar(df['Taille en cm'],df['Effectif'], color='blue', alpha=0.7, width=0.6)
+plt.xlabel('Taille en cm')
+plt.ylabel('Effectif')
+
+plt.plot(df['Taille en cm'], df['Effectif'], marker='o', color='red', linestyle = '-')
+
+plt.show()
