@@ -1,0 +1,11 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+data = {'Etat Mécanique': ['Mauvais','Moyen','Bon','Excellent'],
+        'Effectif': [7,17,32,14]}
+df = pd.DataFrame(data)
+df['Effectif cumulé'] = df['Effectif'].cumsum() 
+
+plt.bar(df['Etat Mécanique'] , df['Effectif cumulé'])
+plt.xlabel("Etat mecanique")
+plt.ylabel("Effectif cumulé")
+plt.show()
