@@ -1,0 +1,10 @@
+import matplotlib.pyplot as plt
+
+genres = ['Masculin', 'Féminin']
+effectifs = [15, 10]
+
+plt.bar(genres, effectifs, color=['blue', 'red'])
+
+plt.xlabel('Genres')
+plt.ylabel('Effectifs')
+plt.show()
