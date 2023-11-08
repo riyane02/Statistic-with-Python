@@ -1,0 +1,10 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+data = {'Nombre d\'enfant': [0,1,2,3,4,5,6,7,8],
+        'Effectif': [4,10,12,8,5,4,4,2,1]}
+df = pd.DataFrame(data)
+df['Frequence %'] = df['Effectif']/df['Effectif'].sum()
+df['Frequence cumulée'] = df['Frequence %'].cumsum()
+
+plt.plot(df['Nombre d\'enfant'],df['Frequence cumulée'], marker = 'o',color = 'red')
+plt.show()
