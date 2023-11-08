@@ -1,0 +1,10 @@
+import matplotlib.pyplot as plt
+etats = ['Mauvais', 'Moyen', 'Bon', 'Excellent']
+effectifs = [7, 17, 32, 14]
+
+
+plt.pie(effectifs, labels=etats, autopct='%1.1f%%',colors=['red', 'yellow', 'green', 'blue'])
+
+plt.title(" Répartition de l'etat mécanique")
+
+plt.show()
